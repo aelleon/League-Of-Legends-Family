@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>League of Legends Family Tree</title>
+	<meta charset="utf-8"/>
+
+	<link rel="stylesheet" type="text/css" href="styles2.css"/>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="scripts.js"></script>
+	<script type="text/javascript" src="scripts-jquery.js"></script>
+
+</head>
+<!-- Source： https://upload.wikimedia.org/wikipedia/en/7/77/League_of_Legends_logo.png */ -->
+<body>
+	<div id="head">
+		<a href="home.html">
+			<img id="logoimg" src="img/home/logo.png" alt="League of Legends logo"/>
+		</a>
+		<h1 id= "title">League of Legends Family Tree</h1>
+		<div id="loginHead">
+				<a href="logout.html">Logout</a>
+				
+			</div>
+	</div>
+
+	
+
+	<ul>
+		<li id="selected">
+			<a href="home.html">
+				<strong>Home</strong>
+			</a>
+		</li>
+		<li><a class="links" href="viewfamily.html">View Family</a></li>
+		<li><a class="links" href="search.html">Search</a></li>
+		<li><a class="links" href="teemoProfile.html">Profile</a></li>
+		<li><a class="links" href="logout.html">Logout</a></li>
+	</ul>
+	<p id="breadcrumbs" class="clear"><a href="home.html">Home</a> &gt; <a href="viewfamily.html">View Family</a> &gt; <a href="addFamilyMember.html">Add a Family Member</a>
+	<h2> Add a Family Member! </h2>
+	<div id = "form">
+		<table>
+			<tr>
+				<td>
+					<div id="topleft">
+						<img id="profileImageView" src="img/profile/teemo.png" alt="image of teemo">
+						<table id="profileForm">
+							<form id="createProfile">
+								<tr>
+									<td class="divWidth">
+										<p class="inline">First Name:</p>
+									</td>
+									<td>
+										<input type="text" id="firstname" placeholder="First name">
+									</td>
+								</tr>
+
+								<tr>
+									<td class="divWidth">
+										<p class="inline">Middle Name:</p>
+									</td>
+									<td>
+										<input type="text" id="middlename" placeholder="Middle Name">
+									</td>
+								</tr>
+								<tr>
+									<td class="divWidth">
+										<p class="inline">Last Name:</p>
+									</td>
+									<td>
+										<input type="text" id="lastname" placeholder="Last name">
+									</td>
+								</tr>
+								<tr>
+									<td class="divWidth">
+										<p class="inline">Date of Birth:</p>
+									</td>
+									<td>
+										<input id="bornDate" type="date">
+									</td>
+								</tr>
+								<tr>
+									<td class="divWidth">
+										<p class="inline">Date of Death:</p>
+									</td>
+									<td>
+										<input id="deathDate" type="date">
+									</td>
+								</tr>
+							</form>
+
+						</table>
+						<div class="floatleft">
+
+						</div>
+					</div>
+				</td>
+				<td id="nomargin">
+					<h2 id="relative">Relationships:</h2>
+					<div id="tabs">
+						<ul>
+							<li><a id="tabs1" href="#tabs-1">Father</a></li>
+							<li><a id="tabs2" href="#tabs-2">Mother</a></li>
+							<li><a id="tabs3" href="#tabs-3">Siblings</a></li>
+						</ul>
+						<div id="tabs-1">
+							<table>
+								<tr>
+									<td class="divWidth">
+										<p class="inline">First Name:</p>
+									</td>
+									<td>
+										<input type="text" id="firstname" placeholder="First name">
+									</td>
+									<td class="divWidth">
+										<p class="inline">Date of Birth:</p>
+									</td>
+									<td>
+										<input id="bornDate" type="date">
+									</td>
+								</tr>
+								<tr>
+									<td class="divWidth">
+										<p class="inline">Middle Name:</p>
+									</td>
+									<td>
+										<input type="text" id="middlename" placeholder="Middle name">
+									</td>
+									<td class="divWidth">
+										<p class="inline">Date of Death:</p>
+									</td>
+									<td>
+										<input id="deathDate" type="date">
+									</td>
+								</tr>
+								<tr>
+									<td class="divWidth">
+										<p class="inline">Last Name:</p>
+									</td>
+									<td>
+										<input type="text" id="lastname" placeholder="Last name">
+									</td>
+									<td class="checkbox">
+										<input id="createProfile" type="checkbox">
+										<label for="createProfile">Create a Profile</label>
+									</td>
+								</tr>
+
+							</table>
+						</div>
+						<div id="tabs-2">
+							<table>
+								<tr>
+									<td class="divWidth">
+										<p class="inline">First Name:</p>
+									</td>
+									<td>
+										<input type="text" id="firstname" placeholder="First name">
+									</td>
+									<td class="divWidth">
+										<p class="inline">Date of Birth:</p>
+									</td>
+									<td>
+										<input id="bornDate" type="date">
+									</td>
+								</tr>
+								<tr>
+									<td class="divWidth">
+										<p class="inline">Middle Name:</p>
+									</td>
+									<td>
+										<input type="text" id="middlename" placeholder="Middle name">
+									</td>
+									<td class="divWidth">
+										<p class="inline">Date of Death:</p>
+									</td>
+									<td>
+										<input id="deathDate" type="date">
+									</td>
+								</tr>
+								<tr>
+									<td class="divWidth">
+										<p class="inline">Last Name:</p>
+									</td>
+									<td>
+										<input type="text" id="lastname" placeholder="Last name">
+									</td>
+									<td class="checkbox">
+										<input id="createProfile" type="checkbox">
+										<label for="createProfile">Create a Profile</label>
+									</td>
+								</tr>
+
+							</table>
+						</div>
+						<div id="tabs-3">
+							<table>
+								<tr>
+									<td class="divWidth">
+										<p class="inline">First Name:</p>
+									</td>
+									<td>
+										<input type="text" id="firstname" placeholder="First name">
+									</td>
+									<td class="divWidth">
+										<p class="inline">Date of Birth:</p>
+									</td>
+									<td>
+										<input id="bornDate" type="date">
+									</td>
+								</tr>
+								<tr>
+									<td class="divWidth">
+										<p class="inline">Middle Name:</p>
+									</td>
+									<td>
+										<input type="text" id="middlename" placeholder="Middle name">
+									</td>
+									<td class="divWidth">
+										<p class="inline">Date of Death:</p>
+									</td>
+									<td>
+										<input id="deathDate" type="date">
+									</td>
+								</tr>
+								<tr>
+									<td class="divWidth">
+										<p class="inline">Last Name:</p>
+									</td>
+									<td>
+										<input type="text" id="lastname" placeholder="Last name">
+									</td>
+									<td class="checkbox">
+										<input id="createProfile" type="checkbox">
+										<label for="createProfile">Create a Profile</label>
+									</td>
+								</tr>
+
+							</table>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h3>Notable Events:</h3>
+					<p class="inline">Date:</p>
+					<input class="notableDate" type="date">
+					<br>
+					<textarea name="notableEvent" cols="80" rows="10">Event Details:
+					</textarea>
+				</td>
+				<td>
+					<h3>Biography:</h3>
+					<p class="inline">Date:</p>
+					<input class="notableDate" type="date">
+					<br>
+					<textarea name="notableEvent" cols="80" rows="10">Enter the Biography here:
+					</textarea>
+				</td>
+			</tr>
+
+		</table>
+	</div>
+</div>
+
+<button id="submitButton">Submit</button>
+<button id="saveButton">Save</button>
+<button id="cancelButton">Cancel</button>
+
+<div id="footer">
+	<a href="https://facebook.com">Facebook</a>
+	<a href="https://twitter.com">Twitter</a>
+	<a href="https://www.reddit.com/r/leagueoflegends">Reddit</a>
+	<p>Copyright &copy; 2018. All rights reserved.</p>
+</div>
+
+
+
+
+</body>
