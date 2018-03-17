@@ -35,7 +35,7 @@ class MemberController {
         	}
 
         }
-
+        
         public function view($id) {	
         	$pageTitle = 'Member';
         	include_once SYSTEM_PATH.'/view/header.tpl';

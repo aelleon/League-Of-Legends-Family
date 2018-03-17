@@ -29,4 +29,6 @@ RewriteRule ^addFamilyMember/?$ app/controller/siteController.php?action=addFami
 
 RewriteRule ^search/?$ app/controller/siteController.php?action=search [QSA,L]
 
+RewriteRule ^viewfamily/?$ app/controller/siteController.php?action=viewfamily [QSA,L]
+
 RewriteRule member/view/(\d+)/?$ app/controller/memberController.php?action=view&id=$1 [QSA,L]

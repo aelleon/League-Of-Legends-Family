@@ -48,7 +48,7 @@
     </a>
  	 </li>
  <?php if(isset($_SESSION['username'])): ?>
- 	<li><a class="links" href="viewfamily.html">View Family</a></li>
+ 	<li><a class="links" href="<?= BASE_URL ?>/viewfamily">View Family</a></li>
   <li><a class="links" href="<?= BASE_URL ?>/search">Search</a></li>
   <li><a class="links" href="<?= BASE_URL ?>/addFamilyMember">Add Member</a></li>
   <li><a class="links" href="<?= BASE_URL ?>/logout">Logout</a></li>

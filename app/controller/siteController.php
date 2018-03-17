@@ -60,11 +60,28 @@ class SiteController {
 			$this->postDB();
 			break;
 
+			case 'viewfamily':
+			$this->viewfamily();
+			break;
+
 		}
 
 	}
 
+	public function viewfamily() {
+		if(!isset($_SESSION['username'])) {
+			header('Location: '.BASE_URL); exit();
+		}
+		$pageTitle = 'View Family';
+		include_once SYSTEM_PATH.'/view/header.tpl';
+		include_once SYSTEM_PATH.'/view/viewfamily.tpl';
+		include_once SYSTEM_PATH.'/view/footer.tpl';
+	}
+
 	public function home() {
+		if(isset($_SESSION['username'])) {
+			header('Location: '.BASE_URL.'/dashboard'); exit();
+		}
 		$pageTitle = 'Home';
 		include_once SYSTEM_PATH.'/view/header.tpl';
 		include_once SYSTEM_PATH.'/view/index.tpl';
@@ -73,6 +90,9 @@ class SiteController {
 	}
 
 	public function login() {
+		if(isset($_SESSION['username'])) {
+			header('Location: '.BASE_URL.'/dashboard'); exit();
+		}
 		$pageTitle = 'Login';
 		include_once SYSTEM_PATH.'/view/header.tpl';
 		include_once SYSTEM_PATH.'/view/login.tpl';
@@ -86,7 +106,8 @@ class SiteController {
 
 		if($un != $correctUsername || $pw != $correctPassword){
 			//header('Location: '.BASE_URL);
-			$message = "wrong answer";
+			//$message = "wrong answer";
+			header('Location: '.BASE_URL); exit();
 			
 		}
 		else {
@@ -112,12 +133,20 @@ class SiteController {
 	}
 
 	public function logout() {
+		if(!isset($_SESSION['username'])) {
+			header('Location: '.BASE_URL); exit();
+		}
+
 		unset($_SESSION['username']);
 		session_destroy();
 		header('Location: '.BASE_URL); exit(); // send us to home page
 	}
 
 	public function addFamilyMember() {
+		if(!isset($_SESSION['username'])) {
+			header('Location: '.BASE_URL); exit();
+		}
+
 		include_once SYSTEM_PATH.'/view/header.tpl';
 		include_once SYSTEM_PATH.'/view/addfamilymember.tpl';
 		include_once SYSTEM_PATH.'/view/footer.tpl';
@@ -177,6 +206,10 @@ class SiteController {
 }
 
 	public function search() {
+		if(!isset($_SESSION['username'])) {
+			header('Location: '.BASE_URL); exit();
+		}
+
 		include_once SYSTEM_PATH.'/view/header.tpl';
 		include_once SYSTEM_PATH.'/view/search.tpl';
 		include_once SYSTEM_PATH.'/view/footer.tpl';

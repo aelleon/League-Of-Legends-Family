@@ -53,21 +53,23 @@ class Member {
       }
   }
 
-  // // return all members as an array
-  // public static function getmembers() {
-  //   $db = Db::instance();
-  //   $q = "SELECT id FROM `".self::DB_TABLE."` ORDER BY last_name ASC;";
-  //   $result = $db->query($q);
+  // return all members as an array
+  public static function getFamilyMembers() {
+    $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_DATABASE) or die('Error could not connect');
 
-  //   $members = array();
+    $q = "SELECT id FROM `".self::DB_TABLE."` ORDER BY first_name ASC;";
 
-  //   if($result->num_rows != 0) {
-  //     while($row = $result->fetch_assoc()) {
-  //       $members[] = self::loadById($row['id']);
-  //     }
-  //   }
-  //   return $members;
-  // }
+    $result = $db->query($q);
+
+    $members = array();
+
+    if($result->num_rows != 0) {
+      while($row = $result->fetch_assoc()) {
+        $members[] = self::loadById($row['id']);
+      }
+    }
+    return $members;
+  }
 
   // public function save(){
   //   if($this->id == 0) {

@@ -10,27 +10,34 @@
 								<img id="profileImageView" src="img/profile/teemo.png">
 
 							</div>
-							<?php if($member->date_birth != null): ?>
+							<?php if($member->date_birth != 0000-00-00): ?>
 						    <h3>Date of Birth: <?= $member->date_birth ?></h3>
 						    <?php else: ?>
-						    <p>Unknown birth date</p>
+						    <h3>Unknown birth date</h3>
+						    <?php endif; ?>
+
+						    <?php if($member->date_death != 0000-00-00): ?>
+						    <h3>Date of Death: <?= $member->date_birth ?></h3>
+						    <?php else: ?>
+						    <h3>Unknown death date</h3>
 						    <?php endif; ?>
 							
 							<h2> Life Events </h2>
 							<div class= "events">
 								<div class="lifeEvents">
-									<h4>Born: 02/01/2017</h4>
-									<p>Teemo was born in Bandle City</p>
-								</div>
-								<div class="lifeEvents">
-									<h4>Slain: 02/02/2017</h4>
-									<p>Teemo was slain in battle on the Summoning Grounds after a back and forth with Swain. However, Teemo's sacrifice gave his team Baron which was enough to win the overall fight.</p>
+									<?php if($member->date_notable != 0000-00-00): ?>
+								    <h3>Date: <?= $member->date_notable ?></h3>
+								    <?php else: ?>
+								    <h3>No notable events</h3>
+								    <?php endif; ?>
+								    <?php if($member->notable != null): ?>
+								    <p>Notable Event: <?= $member->notable ?></p>
+								    <?php else: ?>
+								   
+								    <?php endif; ?>
+
 								</div>
 
-								<div class="lifeEvents">
-									<h4>Revived: 02/01/2017</h4>
-									<p>Teemo was revived after a 30 second timer.</p>
-								</div>
 
 							</div>
 						</div>
